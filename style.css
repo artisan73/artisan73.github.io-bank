@@ -19,6 +19,7 @@ body{
 h1{
     font-size: 1.8rem;
     margin-bottom: 15px;
+    color: rgb(4)
 }
 p{
     font-size: 1.1rem;
@@ -29,6 +30,7 @@ header{
     font-family: sans-serif;
     justify-content: center;
     align-content: center;
+    color: rgb(4, 80, 147);
 }
 input{
     padding: 10px;
@@ -41,7 +43,7 @@ input{
     transition: border 0.3s ease;
 }
 input:focus{
-    border-color: #0012b8;
+    border-color: rgb(4, 80, 147);
 }
 .buttons{
     display: flex;
@@ -54,7 +56,7 @@ button{
     color: white;
     border-radius: 4px;
     font-size: 1rem;
-    background-color: #0012b8;
+    background-color: rgb(4, 80, 147);
     cursor: pointer;
     transition: background-color 0.3s ease;
     padding-left: 30px;
@@ -66,19 +68,20 @@ button{
 }
 button:hover{
     background-color: #0012b800;
-    border-color: 1px solid #333;
+    border: 2px solid #333;
     color: #333;
     border: #333;
 }
 button:active{
     background-color: rgba(255, 255, 255, 0);
     color: #333;
-    border-color: 1px solid #333;
+    border: 2px solid #333;
 }
-@media(min-width: 600px){
+@media(max-height: 670px){
     .container{
         max-width: 500px;
         padding: 30px;
+        margin-top: 30px;
     }
     h1{
         font-size: 2rem;
@@ -91,14 +94,26 @@ button:active{
         flex: 1;
     }
 }
-@media(max-width: 350px){
-    h1{
-        font-size: 1rem;
-    }
-    p{
-        font-size: 0.9rem;
-    }
-    button{
-        font-size: 0.9rem;
-    }
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
 }
