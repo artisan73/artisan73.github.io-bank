@@ -66,14 +66,14 @@ button{
 }
 button:hover{
     background-color: #0012b800;
-    border-color: #333;
+    border-color: 1px solid #333;
     color: #333;
     border: #333;
 }
 button:active{
     background-color: rgba(255, 255, 255, 0);
     color: #333;
-    border-color: #333;
+    border-color: 1px solid #333;
 }
 @media(min-width: 600px){
     .container{
@@ -89,5 +89,16 @@ button:active{
     }
     button{
         flex: 1;
+    }
+}
+@media(max-width: 350px){
+    h1{
+        font-size: 1rem;
+    }
+    p{
+        font-size: 0.9rem;
+    }
+    button{
+        font-size: 0.9rem;
     }
 }
