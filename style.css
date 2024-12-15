@@ -76,10 +76,10 @@ button:active{
     color: #333;
     border: 2px solid #333;
 }
-@media (max-width: 576px) {
+/*@media (max-width: 576px) {
   .container {
     margin-top: 10px;
     width: 95%;
     padding: 10px;
   }
-}
+}*/
