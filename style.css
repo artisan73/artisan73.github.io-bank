@@ -76,23 +76,6 @@ button:active{
     color: #333;
     border: 2px solid #333;
 }
-@media(max-height: 670px){
-    .container{
-        max-width: 500px;
-        padding: 30px;
-        margin-top: 30px;
-    }
-    h1{
-        font-size: 2rem;
-    }
-    .buttons{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    button{
-        flex: 1;
-    }
-}
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
