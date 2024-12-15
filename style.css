@@ -70,7 +70,6 @@ button:hover{
     background-color: #0012b800;
     border: 2px solid #333;
     color: #333;
-    border: #333;
 }
 button:active{
     background-color: rgba(255, 255, 255, 0);
