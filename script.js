@@ -6,7 +6,7 @@ class BankAccount{
     deposit(amount){
         if (amount > 0){
             this.balance += amount;
-            return `You have successfully deposited $${amount}. You current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`;
+            return `You have successfully deposited $${amount}. Your current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`;
         }
         else {
             return "Get serious bro you cant deposit money in negatives";
@@ -15,7 +15,7 @@ class BankAccount{
     withdraw(amount){
         if (amount > 0 && amount <= this.balance){
             this.balance -= amount;
-            return `You have successfully withdrawn $${amount}. You current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`;
+            return `You have successfully withdrawn $${amount}. Your current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`;
         }
         else if (amount > this.balance){
             return "Insuficient funds. Please deposit and try again";
