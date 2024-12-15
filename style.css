@@ -78,8 +78,8 @@ button:active{
 }
 @media (max-width: 576px) {
   .container {
-    max-width: 540px;
-      width: 50%;
+    width: 95%;
+    padding: 15px;
   }
 }
 
