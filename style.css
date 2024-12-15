@@ -79,6 +79,10 @@ button:active{
 @media (max-width: 576px) {
   .container {
     margin-top: 30px;
+    height: 100hv;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
   }
 }
 
