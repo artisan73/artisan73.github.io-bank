@@ -40,7 +40,7 @@ class BankAccount{
         else if (amount > this.balance){
             Swal.fire({
                 title: "Withdraw Failed!",
-                text: `Bro what exactly are you withdrawing? Deposit and try again`,
+                text: "Bro what exactly are you withdrawing? Deposit and try again",
                 icon: "question",
                 confirmButtonColor: "rgb(4, 80, 147)",
                 confirmButtonText: "Try Again"
@@ -67,7 +67,7 @@ function deposit(){
 //withdraw funtion
 function withdraw(){
     const amount = parseFloat (document.getElementById("amount").value);
-    if(account.deposit(amunt)){
+    if(account.withdraw(amount)){
     updateBalance();
     }
 }
