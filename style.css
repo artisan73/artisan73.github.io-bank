@@ -83,20 +83,3 @@ button:active{
     padding: 10px;
   }
 }
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-@media(max-height: 670px){
-    .container{
-        margin-top: 30px;
-    }
-}
