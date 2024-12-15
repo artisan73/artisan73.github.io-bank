@@ -24,6 +24,7 @@ class BankAccount{
                 confirmButtonText: "Try Again"
         });
             return false;
+        }
     }
     withdraw(amount){
         if (amount > 0 && amount <= this.balance){
