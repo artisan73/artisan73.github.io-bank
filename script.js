@@ -9,7 +9,7 @@ class BankAccount{
             return `You have successfully deposited $${amount}. Your current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`;
         }
         else {
-            return "Get serious bro you cant deposit money in negatives";
+            Swal.fire("Get serious bro you cant deposit money in negatives");
         }
     }
     withdraw(amount){
@@ -18,7 +18,7 @@ class BankAccount{
             return `You have successfully withdrawn $${amount}. Your current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`;
         }
         else if (amount > this.balance){
-            return "Insuficient funds. Please deposit and try again";
+            Swal.fire("Insuficient funds. Please deposit and try again");
         }
     }
     getBalance(){
@@ -33,13 +33,13 @@ function updateBalance(){
 //Deposit funtion
 function deposit(){
     const amount = parseFloat (document.getElementById("amount").value);
-    alert(account.deposit(amount));
+    Swal.fire(account.deposit(amount));
     updateBalance();
 }
 //withdraw funtion
 function withdraw(){
     const amount = parseFloat (document.getElementById("amount").value);
-    alert(account.withdraw(amount));
+    Swal.fire(account.withdraw(amount));
     updateBalance();
 }
 updateBalance();
