@@ -6,19 +6,42 @@ class BankAccount{
     deposit(amount){
         if (amount > 0){
             this.balance += amount;
-            return `You have successfully deposited $${amount}. Your current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`;
+            Swal.fire({
+                title: "Deposit Successful!",
+                text: `You have successfully deposited $${amount}. Your current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`,
+                icon: "success",
+                confirmButtonColor: "rgb(4, 80, 147)",
+                confirmButtonText: "OK"
+    });
         }
         else {
-            return "Get serious bro you cant deposit money in negatives";
-        }
+            Swal.fire({
+                title: "Deposit Failed!",
+                text: "Get serious bro you cant deposit money in negatives",
+                icon: "warning",
+                confirmButtonColor: "rgb(4, 80, 147)",
+                confirmButtonText: "Try Again"
+        });
     }
     withdraw(amount){
         if (amount > 0 && amount <= this.balance){
             this.balance -= amount;
-            return `You have successfully withdrawn $${amount}. Your current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`;
+            Swal.fire({
+                title: "Withdraw Successful!",
+                text: `You have successfully withdrawn $${amount}. Your current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`,
+                icon: "success",
+                confirmButtonColor: "rgb(4, 80, 147)",
+                confirmButtonText: "OK"
+        });
         }
         else if (amount > this.balance){
-            return "Insuficient funds. Please deposit and try again";
+            Swal.fire({
+                title: "Withdraw Failed!",
+                text: `Bro what exactly are you withdrawing? Deposit and try again`,
+                icon: "question",
+                confirmButtonColor: "rgb(4, 80, 147)",
+                confirmButtonText: "Try Again"
+        });
         }
     }
     getBalance(){
@@ -33,37 +56,15 @@ function updateBalance(){
 //Deposit funtion
 function deposit(){
     const amount = parseFloat (document.getElementById("amount").value);
-    Swal.fire({
-        title: "Deposit Successful!",
-        text: `You have successfully deposited $${amount}`,
-        icon: "success",
-        confirmButtonColor: "rgb(4, 80, 147)",
-        confirmButtonText: "OK"
-    });
-    updateBalance();
+    if (account.deposit(amount)){
+     updateBalance();
+    }
 }
 //withdraw funtion
 function withdraw(){
     const amount = parseFloat (document.getElementById("amount").value);
-    const message = account.withdraw();
-    if (message.includes("Insufficient")){
-        Swal.fire({
-            title: "Error!",
-            text: message,
-            icon: "error",
-            confirmButtonColor: "rgb(4, 80, 147)",
-            confirmButtonText: "Try Again"
-        });
-    }
-    else{
-        Swal.fire({
-            title: "Withdrawal Successful!",
-            text: message,
-            icon: "success",
-            confirmButtonColor: "rgb(4, 80, 147)",
-            confirmButtonText: "OK"
-        });
-    }
+    if(account.deposit(amunt)){
     updateBalance();
+    }
 }
 updateBalance();
