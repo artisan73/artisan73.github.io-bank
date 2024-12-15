@@ -9,7 +9,7 @@ class BankAccount{
             return `You have successfully deposited $${amount}. Your current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`;
         }
         else {
-            Swal.fire("Get serious bro you cant deposit money in negatives");
+            return "Get serious bro you cant deposit money in negatives";
         }
     }
     withdraw(amount){
@@ -18,7 +18,7 @@ class BankAccount{
             return `You have successfully withdrawn $${amount}. Your current balance is $${this.balance}. Thank you for using Quantum developer's Bank.`;
         }
         else if (amount > this.balance){
-            Swal.fire("Insuficient funds. Please deposit and try again");
+            return "Insuficient funds. Please deposit and try again";
         }
     }
     getBalance(){
@@ -33,13 +33,37 @@ function updateBalance(){
 //Deposit funtion
 function deposit(){
     const amount = parseFloat (document.getElementById("amount").value);
-    Swal.fire(account.deposit(amount));
+    Swal.fire({
+        title: "Deposit Successful!",
+        text: `You have successfully deposited $${amount}`,
+        icon: "success",
+        confirmButtonColor: "rgb(4, 80, 147)",
+        confirmButtonText: "OK"
+    });
     updateBalance();
 }
 //withdraw funtion
 function withdraw(){
     const amount = parseFloat (document.getElementById("amount").value);
-    Swal.fire(account.withdraw(amount));
+    const message = account.withdraw();
+    if (message.includes("Insufficient")){
+        Swal.fire({
+            title: "Error!",
+            text: message,
+            icon: "error",
+            confirmButtonColor: "rgb(4, 80, 147)",
+            confirmButtonText: "Try Again"
+        });
+    }
+    else{
+        Swal.fire({
+            title: "Withdrawal Successful!",
+            text: message,
+            icon: "success",
+            confirmButtonColor: "rgb(4, 80, 147)",
+            confirmButtonText: "OK"
+        });
+    }
     updateBalance();
 }
 updateBalance();
