@@ -76,7 +76,7 @@ button:active{
     color: #333;
     border: 2px solid #333;
 }
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .container {
     max-width: 540px;
       width: 50%;
