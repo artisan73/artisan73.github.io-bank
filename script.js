@@ -13,6 +13,7 @@ class BankAccount{
                 confirmButtonColor: "rgb(4, 80, 147)",
                 confirmButtonText: "OK"
     });
+            return true;
         }
         else {
             Swal.fire({
@@ -22,6 +23,7 @@ class BankAccount{
                 confirmButtonColor: "rgb(4, 80, 147)",
                 confirmButtonText: "Try Again"
         });
+            return false;
     }
     withdraw(amount){
         if (amount > 0 && amount <= this.balance){
@@ -33,6 +35,7 @@ class BankAccount{
                 confirmButtonColor: "rgb(4, 80, 147)",
                 confirmButtonText: "OK"
         });
+            return true;
         }
         else if (amount > this.balance){
             Swal.fire({
@@ -42,6 +45,7 @@ class BankAccount{
                 confirmButtonColor: "rgb(4, 80, 147)",
                 confirmButtonText: "Try Again"
         });
+            return false;
         }
     }
     getBalance(){
