@@ -80,7 +80,6 @@ button:active{
   .container {
     width: 95%;
     padding: 15px;
-    display: flex;
     align-items: center;
   }
 }
